@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "b6324ea6-6f51-488e-91fe-29756cab237f",
+		"name": "Algolia School",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "actors-index",
+			"item": [
+				{
+					"name": "Replace All",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"name\": \"Catherine Missal\",\r\n        \"rating\": 4875,\r\n        \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n        \"alternative_name\": null,\r\n        \"objectID\": \"551486300\"\r\n    },\r\n    {\r\n        \"name\": \"Missal\",\r\n        \"rating\": 4875,\r\n        \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n        \"alternative_name\": null,\r\n        \"objectID\": \"551486301\"\r\n    }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/all?replace=true",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"all"
+							],
+							"query": [
+								{
+									"key": "replace",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Catherine Missal\",\r\n    \"rating\": 4875,\r\n    \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n    \"alternative_name\": null,\r\n    \"objectID\": \"551486300\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create All",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"name\": \"Catherine Missal\",\r\n        \"rating\": 4875,\r\n        \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n        \"alternative_name\": null,\r\n        \"objectID\": \"551486300\"\r\n    },\r\n    {\r\n        \"name\": \"Missal\",\r\n        \"rating\": 4875,\r\n        \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n        \"alternative_name\": null,\r\n        \"objectID\": \"551486301\"\r\n    }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/all",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/551486300?attributesToRetrieve=name,image_path",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"551486300"
+							],
+							"query": [
+								{
+									"key": "attributesToRetrieve",
+									"value": "name,image_path"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All By Ids",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/all?ids=551486300,551486301&attributesToRetrieve=name",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"all"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "551486300,551486301"
+								},
+								{
+									"key": "attributesToRetrieve",
+									"value": "name"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/all",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"name\": \"Catherine Missal\",\r\n    \"rating\": 4875,\r\n    \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n    \"alternative_name\": \"Catherine\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/551486300",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"551486300"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Partially",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"rating\": 50\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/551486300",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"551486300"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"name\": \"Catherine Missal\",\r\n    \"rating\": 4875,\r\n    \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n    \"alternative_name\": null\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/551486300",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"551486300"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

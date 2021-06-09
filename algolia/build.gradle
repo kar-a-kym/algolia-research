@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+version '1.0.0'
+group = 'com.epam.algoliaresearch.algolia'
+description = 'This module exposes an API to work with Algolia'
+sourceCompatibility = 1.11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Libraries
+    implementation "org.springframework.boot:spring-boot-starter-web:${springVersion}"
+
+    // Algolia
+    //TODO Task 1 View the dependencies required for Algolia's Java client
+    implementation "com.algolia:algoliasearch-core:${algoliaVersion}"
+    implementation "com.algolia:algoliasearch-apache:${algoliaVersion}"
+
+    //Apache
+    implementation "org.apache.commons:commons-collections4:${apacheCollectionsVersion}"
+    implementation "org.apache.commons:commons-lang3:${apacheLangVersion}"
+
+    //Logger
+    implementation "ch.qos.logback:logback-classic:${logbackClassicVersion}"
+    implementation "net.logstash.logback:logstash-logback-encoder:${logstashLogbackVersion}"
+
+    // Lombok
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    // Tests
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${springVersion}"
+}
+
+application {
+    mainClassName = 'com.epam.algoliaresearch.algolia.Application'
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}

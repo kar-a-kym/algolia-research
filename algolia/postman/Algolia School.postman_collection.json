@@ -1,0 +1,636 @@
+{
+	"info": {
+		"_postman_id": "b6324ea6-6f51-488e-91fe-29756cab237f",
+		"name": "Algolia School",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "movies-index",
+			"item": [
+				{
+					"name": "Task 14: Load",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/movies/load",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"movies",
+								"load"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task14: Delete All",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/movies",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 15: Get Index Settings Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/indices/actors/settings",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"indices",
+								"actors",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 16: Set Index Settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/indices/actors/settings",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"indices",
+								"actors",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "actors-index",
+			"item": [
+				{
+					"name": "Task 3: Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Catherine Missal\",\r\n    \"rating\": 4875,\r\n    \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n    \"alternative_name\": null,\r\n    \"objectID\": \"551486300\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 4: Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"name\": \"Catherine Missal\",\r\n    \"rating\": 4875,\r\n    \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n    \"alternative_name\": \"Catherine\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/551486300",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"551486300"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 5: Update Partially",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"rating\": 50\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/551486300",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"551486300"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 6: Delete By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"name\": \"Catherine Missal\",\r\n    \"rating\": 4875,\r\n    \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n    \"alternative_name\": null\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/551486300",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"551486300"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 7: Replace All",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"name\": \"Catherine Missal\",\r\n        \"rating\": 4875,\r\n        \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n        \"alternative_name\": null,\r\n        \"objectID\": \"551486300\"\r\n    },\r\n    {\r\n        \"name\": \"Missal\",\r\n        \"rating\": 4875,\r\n        \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n        \"alternative_name\": null,\r\n        \"objectID\": \"551486301\"\r\n    }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/all?replace=true",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"all"
+							],
+							"query": [
+								{
+									"key": "replace",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 8: Create All",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"name\": \"Catherine Missal\",\r\n        \"rating\": 4875,\r\n        \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n        \"alternative_name\": null,\r\n        \"objectID\": \"551486300\"\r\n    },\r\n    {\r\n        \"name\": \"Missal\",\r\n        \"rating\": 4875,\r\n        \"image_path\": \"/g3fsRgEoMxaqPayIMtGDWERqJ6A.jpg\",\r\n        \"alternative_name\": null,\r\n        \"objectID\": \"551486301\"\r\n    }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/all",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 9: Delete All",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/all",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 10: Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/551486300?attributesToRetrieve=name,image_path",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"551486300"
+							],
+							"query": [
+								{
+									"key": "attributesToRetrieve",
+									"value": "name,image_path"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 11: Get All By Ids",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/all?ids=551486300,551486301&attributesToRetrieve=name",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"all"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "551486300,551486301"
+								},
+								{
+									"key": "attributesToRetrieve",
+									"value": "name"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 12: Load",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/actors/load",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"actors",
+								"load"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 15: Get Index Settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/indices/actors/settings",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"indices",
+								"actors",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task 16: Set Index Settings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attributesToRetrieve\": [\r\n        \"*\"\r\n    ],\r\n    \"customRanking\": [\r\n        \"desc(name)\"\r\n    ],\r\n    \"hitsPerPage\": 5,\r\n    \"unretrievableAttributes\": [\r\n        \"image_path\"\r\n    ],\r\n    \"searchableAttributes\": [\r\n        \"name\",\r\n        \"alternative_name\"\r\n    ],\r\n    \"queryType\": \"prefixLast\",\r\n    \"disablePrefixOnAttributes\": [\r\n        \"name\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{algolia-host}}:{{algolia-port}}/indices/actors/settings",
+							"protocol": "http",
+							"host": [
+								"{{algolia-host}}"
+							],
+							"port": "{{algolia-port}}",
+							"path": [
+								"indices",
+								"actors",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "algolia",
+			"item": [
+				{
+					"name": "Settings Endpoints",
+					"item": [
+						{
+							"name": "Get settings",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Algolia-API-Key",
+										"type": "text",
+										"value": "{{admin-api-key}}"
+									},
+									{
+										"key": "X-Algolia-Application-Id",
+										"type": "text",
+										"value": "{{application-id}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{application-id}}-dsn.algolia.net/1/indexes/actors/settings",
+									"protocol": "https",
+									"host": [
+										"{{application-id}}-dsn",
+										"algolia",
+										"net"
+									],
+									"path": [
+										"1",
+										"indexes",
+										"actors",
+										"settings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set settings",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-Algolia-API-Key",
+										"type": "text",
+										"value": "{{admin-api-key}}"
+									},
+									{
+										"key": "X-Algolia-Application-Id",
+										"type": "text",
+										"value": "{{application-id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"searchableAttributes\": [\"name\", \"alternative_name\", \"rating\"],\r\n    \"customRanking\": [\"asc(name)\", \"asc(rating)\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{application-id}}-dsn.algolia.net/1/indexes/actors/settings",
+									"protocol": "https",
+									"host": [
+										"{{application-id}}-dsn",
+										"algolia",
+										"net"
+									],
+									"path": [
+										"1",
+										"indexes",
+										"actors",
+										"settings"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Search",
+					"item": [
+						{
+							"name": "Search Actors",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Algolia-API-Key",
+										"type": "text",
+										"value": "{{search-api-key}}"
+									},
+									{
+										"key": "X-Algolia-Application-Id",
+										"type": "text",
+										"value": "{{application-id}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{application-id}}-dsn.algolia.net/1/indexes/actors?query=Cat",
+									"protocol": "https",
+									"host": [
+										"{{application-id}}-dsn",
+										"algolia",
+										"net"
+									],
+									"path": [
+										"1",
+										"indexes",
+										"actors"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "Cat"
+										},
+										{
+											"key": "attributesToRetrieve",
+											"value": "alternative_name",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search Movies",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Algolia-API-Key",
+										"type": "text",
+										"value": "{{search-api-key}}"
+									},
+									{
+										"key": "X-Algolia-Application-Id",
+										"type": "text",
+										"value": "{{application-id}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{application-id}}-dsn.algolia.net/1/indexes/movies?query=Cat",
+									"protocol": "https",
+									"host": [
+										"{{application-id}}-dsn",
+										"algolia",
+										"net"
+									],
+									"path": [
+										"1",
+										"indexes",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "Cat"
+										},
+										{
+											"key": "attributesToRetrieve",
+											"value": "alternative_name",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
