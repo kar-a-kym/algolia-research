@@ -17,7 +17,6 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web:${springVersion}"
 
     // Algolia
-    //TODO Task 1 View the dependencies required for Algolia's Java client
     implementation "com.algolia:algoliasearch-core:${algoliaVersion}"
     implementation "com.algolia:algoliasearch-apache:${algoliaVersion}"
 
