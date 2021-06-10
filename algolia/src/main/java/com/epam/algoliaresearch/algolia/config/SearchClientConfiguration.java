@@ -1,6 +1,8 @@
 package com.epam.algoliaresearch.algolia.config;
 
+import com.algolia.search.DefaultSearchClient;
 import com.algolia.search.SearchClient;
+import com.algolia.search.SearchConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -18,8 +20,15 @@ public class SearchClientConfiguration {
 
     @Bean(destroyMethod = "close")
     public SearchClient getDefaultClient() {
-        //TODO Task 2 Configure search client
         log.info("Configuring search client for application {}", applicationId);
-        return null;
+        SearchConfig searchConfig = new SearchConfig.Builder(applicationId, apiKey)
+                .setWriteTimeOut(1000)//Equals default value
+                .setReadTimeOut(1000)//Equals default value
+                .setConnectTimeOut(2000)//Equals default value
+                .setBatchSize(500)//Default is 1000
+                .addExtraHeaders("X-Algolia-User", "algolia-research-app")
+                .build();
+        return DefaultSearchClient.create(searchConfig);
     }
+
 }
